@@ -1,0 +1,12 @@
+{
+  "name": "personal-site",
+  "version": "1.0.0",
+  "description": "personal site of Sam Thomas",
+  "main": "",
+  "author": "<samuelfullerthomas@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cloudfront-invalidate-cli": "^1.4.0",
+    "s3-website": "^3.3.0"
+  }
+}
