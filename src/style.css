@@ -8,14 +8,18 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
+  height: 95%;
+  top: 30px;
+  position: absolute;
+  width: 100%;
 }
 .textStuff{
+  margin: 10px 10px;
+  width: 96%;
   color: #C928FB;
+  height: 100%;
   background-color: rgba(255, 255, 255, 0.9);
   font-size: 22px;
-  width: 100%;
-  height: -webkit-fill-available;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,16 +63,74 @@ a:hover{
 }
 .footer{
   text-align: center;
-  bottom: 0px;
-  margin-top: auto;
-  margin-bottom: 20px;
+  top: 0px;
+  border-bottom: 2px solid #c928fb;
+  width: 100%;
+  position: fixed;
+  font-size: 16px;
+  background: white;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
-
+.downloads{
+  text-align: center;
+  background-image: url('./assets/no-dummies.png')
+}
+.dowloadsContent{
+  background-color: rgba(255, 255, 255, .9);
+  margin: auto;
+  top: 30px;
+  position: relative;
+  width: 50%;
+  padding: 50px;
+}
+.download-label{
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+.download-label span{
+  padding-right: 10px;
+}
+.download{
+  padding: 10px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #a100ff;
+}
+.links{
+  text-align: left;
+  margin: 0px 40px;
+}
+.link{
+  border: 1px solid #a100ff;
+  padding: 20px;
+}
+.link-title{
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.icon{
+  width: 32px;
+  height: 32px;
+}
+.large-icon{
+  width: 64px;
+  height: 64px;
+}
 @media screen and (max-width: 767px) {
   #root{
+    height: auto;
     background-size: cover;
   }
   .textStuff {
+    height: auto;
     font-size: 20px;
     text-align: center;  
   }
@@ -86,7 +148,11 @@ a:hover{
     padding: 0px;
     top: 5px;
   }
+  .dowloadsContent{
+    width: 100%;
+  }
   a{
     color: #3f51b5;
   }
 }
+
