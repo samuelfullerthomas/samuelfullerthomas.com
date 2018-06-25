@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width">
-    <title>nom nom nom</title>
+    <title>rent table</title>
     <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./style.css">
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
@@ -29,37 +29,53 @@
     <!-- End Google Tag Manager (noscript) -->
     <div id="root">
       <div class="textStuff">
-          <h2>
-            Hello, welcome to my personal website.
-          </h2>
-          <div class='textSection'>
-            You're welcome to stay though I'm not sure why you would.
-          </div>
-          <div class='textSection'>
-            If you need help leaving this webpage there are a few different options.
-          </div>
-          <div class='textSection'>
-            First, you could try giving me a shout at <span class="emailLink">samuelfullerthomas at gmail dot com</span>.
-            <br>I'll direct you to the nearest exit.
-          </div>
-          <div class="textSection githubParagraph">
-            Second, you could follow me home to
-            <a href="https://github.com/samuelfullerthomas/">
-              <img class="githubLogo" src="./assets/github.png" />
-            </a>
-            and sort of naviagte from there.
-          </div>
-          <div class='textSection'>
-            Finally, you could always opt for the mystery door. 
-            <br>
-            <a href="https://wiby.me/surprise/" target="_blank">Open it, and just walk on through...</a>
-          </div>
+          <table>
+              <thead>
+                  <tr>
+                    <th>PPW</th>
+                    <th>PPM</th>
+                  </tr>
+                </thead>
+              <tbody id='rentTable'></tbody>
+          </table>
           <div class="footer">
+            <a href='./'>Home</a>
             <a href='./shift-change.html'>Shift Change</a> |
             <a href='./downloads.html'>Downloads</a>
-            <a href='./ppw-to-ppm.html'>Rent</a>
           </div>
       </div>
     </div>
+    <script>
+      function generateRentTable (options) {
+        const { lowRent, highRent, rentType } = options
+        const increment = rentType === 'ppw' ? 10 : 50
+        let currentRent = lowRent
+        let rentTable = []
+        while (currentRent < highRent) {
+          rentTable.push(currentRent)
+          currentRent += increment
+        }
+        const mappedTable = rentTable.map(price => {
+          return rentType === 'ppw'
+            ? {
+              ppw: price,
+              ppm: (price * 52) / 12
+            }
+            : {
+              ppw: (price * 12) / 52,
+              ppm: price
+            }
+        })
+        mappedTable.forEach((pair, index) => {
+          const rentTable = document.getElementById('rentTable')
+          const tableRow = rentTable.insertRow(index)
+          const ppwCell = tableRow.insertCell(0)
+          const ppmCell = tableRow.insertCell(1)
+          ppwCell.appendChild(document.createTextNode('£' + Math.floor(pair.ppw)))
+          ppmCell.appendChild(document.createTextNode('£' + Math.floor(pair.ppm)))
+        })
+      }
+      generateRentTable({ lowRent: 300, highRent: 480, rentType: 'ppw' })
+    </script>
   </body>  
 </html>
