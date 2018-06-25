@@ -4,7 +4,9 @@ body {
   font-family: 'Lato';
 }
 
+
 table {
+  margin-top: 20px;
   border-collapse: collapse;
   border-spacing: 0px;
   width: 500px;
@@ -138,6 +140,13 @@ a:hover{
   height: 64px;
 }
 @media screen and (max-width: 767px) {
+  table {
+    margin-top: 0px;  
+    border-collapse: collapse;
+    border-spacing: 0px;
+    width: 100%;
+    text-align: center;
+  }
   #root{
     height: auto;
     background-size: cover;
