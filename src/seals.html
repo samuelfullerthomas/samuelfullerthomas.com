@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width">
+    <title>nom nom nom</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+    <link rel="manifest" href="./assets/manifest.json">
+    <link rel="mask-icon" href="./assets/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PZMCWDP');
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZMCWDP"
+      height="0" width="0" style="display:none;visibility:hidden">
+      </iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="root">
+      <div class="header">
+        <a href='./'>Home</a> |
+        <a href='./downloads.html'>Downloads</a> |
+        <a href='./shift-change.html'>Shift Change</a> |
+        <a href='./ppw-to-ppm.html'>Rent</a>
+      </div>
+      <div class="textStuff">
+          <h2>
+            This is a collection of seals with hats
+          </h2>
+          <div class='sealGallery'>
+            <div class='sealImage'>
+              <img src='./assets/seals/1.jpg'>
+            </div>
+            <div class='sealImage'>
+              <img src='./assets/seals/2.jpg'>
+            </div>
+            <div class='sealImage'>
+              <img src='./assets/seals/3.jpg'>
+            </div>
+            <div class='sealImage'>
+              <img src='./assets/seals/4.jpg'>
+            </div>
+            <div class='sealImage'>
+              <img src='./assets/seals/5.jpg'>
+            </div>
+            <div class='sealImage'>
+              <img src='./assets/seals/6.jpg'>
+            </div>
+            <div class='sealImage'>
+              <img src='./assets/seals/7.jpg'>
+            </div>
+            <div class='sealImage'>
+              <img src='./assets/seals/8.jpg'>
+            </div>
+            <div class='sealOverlay hidden'>
+              <div class='sealOverlayBackground'></div>
+              <div class='sealOverlayImage'>
+                <div class='sealOverlay-close'>x</div>
+                <img src='./assets/seals/1.jpg'>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <script>
+      // lightbox functionality
+      var sealOverlay = document.querySelector('.sealOverlay')
+      var sealOverlayClose = document.querySelector('.sealOverlay-close')
+      var sealImages = document.querySelectorAll('.sealImage')
+      var sealOverlayImage = document.querySelector('.sealOverlay img')
+      var sealOverlayBackground = document.querySelector('.sealOverlayBackground')
+      
+      sealOverlayClose.addEventListener('click', hideOverlay)
+      sealOverlayBackground.addEventListener('click', hideOverlay)
+      sealImages.forEach(function (element, index) {
+        var showOverlay = createShowOverlay(index)
+        element.addEventListener('click', showOverlay)
+      })
+      document.addEventListener('keydown', hideOverlay)
+
+      function hideOverlay () {
+        sealOverlay.classList.add('hidden')
+      }
+      function createShowOverlay (index) {
+        return function () {
+          sealOverlayImage.src = './assets/seals/' + (index + 1) +'.jpg'
+          sealOverlay.classList.remove('hidden')
+        }
+      }
+    </script>
+  </body>  
+</html>
