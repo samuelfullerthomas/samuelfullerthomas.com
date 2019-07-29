@@ -1,6 +1,6 @@
 ## Samuel Fuller Thomas
 #### samuelfullerthomas.com
 
-This is my personal site - soon it's going to be a generic s3 static website repo & tutorial.
+This is my personal site. It has a few strange text games I have made over the years on it, and some things you can download, and some words I've written.
 
-Once I've done that that, this will be an example site. Please enjoy & look around.
+Please enjoy & look around.
