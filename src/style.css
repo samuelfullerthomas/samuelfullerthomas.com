@@ -1,9 +1,9 @@
 body {
   display: block;
   margin: 0px;
-  font-family: 'Lato';
+  font-family: "Lato";
+  background-image: url(./assets/chicken.gif);
 }
-
 
 table {
   margin-top: 20px;
@@ -13,12 +13,14 @@ table {
   text-align: center;
 }
 
-table, th, td{
+table,
+th,
+td {
   padding: 10px;
   border: 1px solid black;
 }
 /* common elements */
-.header{
+.header {
   text-align: center;
   top: 0px;
   border-bottom: 2px solid #c928fb;
@@ -34,8 +36,7 @@ table, th, td{
   padding-bottom: 4px;
 }
 
-#root{
-  background-image: url(./assets/chicken.gif);
+#root {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,43 +46,43 @@ table, th, td{
 
 /* home page */
 
-.textStuff{
+.textStuff {
   margin: 40px 10px;
   padding: 40px 0px;
   width: 96%;
-  color: #C928FB;
+  color: #c928fb;
   background-color: rgba(255, 255, 255, 0.9);
   font-size: 22px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-h2{
-  font-family: 'Montserrat';
+h2 {
+  font-family: "Montserrat";
 }
-.textSection{
+.textSection {
   margin: 0.5em;
   text-align: center;
 }
-a{
-  color: #C928FB;
+a {
+  color: #c928fb;
   position: relative;
 }
-a:hover{
+a:hover {
   text-decoration: underline;
 }
-.emailLink{
+.emailLink {
   text-decoration: none;
   color: black;
   display: inline-block;
 }
-.githubLogo{
+.githubLogo {
   width: 64px;
   padding-left: 4px;
   top: 2px;
   position: relative;
 }
-.error{
+.error {
   text-align: center;
   color: red;
   background-color: black;
@@ -89,56 +90,56 @@ a:hover{
   padding-top: 15%;
   font-size: 80px;
 }
-.githubParagraph{
+.githubParagraph {
   display: flex;
   align-items: center;
 }
 
 /* downloads page */
 
-.downloads{
+.downloads {
   text-align: center;
-  background-image: url('./assets/no-dummies.png')
+  background-image: url("./assets/no-dummies.png");
 }
-.dowloadsContent{
-  background-color: rgba(255, 255, 255, .9);
+.dowloadsContent {
+  background-color: rgba(255, 255, 255, 0.9);
   margin: 60px auto;
   max-width: 65%;
   padding: 20px;
 }
-.download-label{
+.download-label {
   display: flex;
   align-items: center;
   font-size: 20px;
 }
-.download-label span{
+.download-label span {
   padding-right: 10px;
 }
-.download{
+.download {
   padding: 10px 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid #a100ff;
 }
-.links{
+.links {
   text-align: left;
   margin: 0px 40px;
 }
-.link{
+.link {
   border: 1px solid #a100ff;
   padding: 20px;
 }
-.link-title{
+.link-title {
   margin-bottom: 10px;
   font-size: 20px;
   font-weight: bold;
 }
-.icon{
+.icon {
   width: 32px;
   height: 32px;
 }
-.large-icon{
+.large-icon {
   width: 64px;
   height: 64px;
 }
@@ -175,7 +176,7 @@ a:hover{
   justify-content: center;
   align-items: center;
 }
-.sealOverlayBackground { 
+.sealOverlayBackground {
   background-color: black;
   opacity: 0.5;
   width: 100%;
@@ -214,40 +215,40 @@ a:hover{
     cursor: auto;
   }
   table {
-    margin-top: 0px;  
+    margin-top: 0px;
     border-collapse: collapse;
     border-spacing: 0px;
     width: 100%;
     text-align: center;
   }
-  #root{
+  #root {
     height: auto;
     background-size: cover;
   }
   .textStuff {
     height: auto;
     font-size: 20px;
-    text-align: center;  
+    text-align: center;
   }
-  .textSection{
+  .textSection {
     font-size: 18px;
   }
-  .githubParagraph{
+  .githubParagraph {
     display: block;
   }
-  .githubParagraph a{
+  .githubParagraph a {
     text-decoration: none;
   }
-  .githubLogo{
+  .githubLogo {
     width: 54px;
     padding: 0px;
     top: 5px;
   }
-  .dowloadsContent{
+  .dowloadsContent {
     width: 100%;
     padding: 10px 0px;
   }
-  a{
+  a {
     color: #3f51b5;
   }
 }
