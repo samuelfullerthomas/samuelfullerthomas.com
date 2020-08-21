@@ -208,6 +208,9 @@ a:hover {
 
 /* media queries */
 @media screen and (max-width: 767px) {
+  .header {
+    height: 50px;
+  }
   .sealOverlay {
     display: none !important;
   }
@@ -246,6 +249,10 @@ a:hover {
   }
   .dowloadsContent {
     width: 100%;
+    width: 100%;
+    padding: 10px 0px;
+    max-width: 100%;
+    margin: auto;
     padding: 10px 0px;
   }
   a {
