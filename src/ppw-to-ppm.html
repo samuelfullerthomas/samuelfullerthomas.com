@@ -1,77 +1,106 @@
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
     <title>rent table</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./style.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
-    <link rel="manifest" href="./assets/manifest.json">
-    <link rel="mask-icon" href="./assets/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="theme-color" content="#ffffff">
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato|Montserrat"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./assets/manifest.json" />
+    <link
+      rel="mask-icon"
+      href="./assets/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="theme-color" content="#ffffff" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113721806-1"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-113721806-1"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'UA-113721806-1');
+      gtag("config", "UA-113721806-1");
     </script>
   </head>
   <body>
     <div id="root">
       <div class="header">
-        <a href='./'>Home</a> |
-        <a href='./downloads.html'>Downloads</a> |
-        <a href='./shift-change.html'>Shift Change</a> |
-        <a href='./seals.html'>Seals with Hats</a>
+        <a href="./">Home</a> | <a href="./downloads.html">Downloads</a> |
+        <a href="./shift-change.html">Shift Change</a> |
+        <a href="./seals.html">Seals with Hats</a>
       </div>
-      <div class="textStuff">
-          <table>
-              <thead>
-                  <tr>
-                    <th>PPW</th>
-                    <th>PPM</th>
-                  </tr>
-                </thead>
-              <tbody id='rentTable'></tbody>
-          </table>
+      <div class="textStuff content">
+        <table>
+          <thead>
+            <tr>
+              <th>PPW</th>
+              <th>PPM</th>
+            </tr>
+          </thead>
+          <tbody id="rentTable"></tbody>
+        </table>
       </div>
     </div>
     <script>
-      function generateRentTable (options) {
-        const { lowRent, highRent, rentType } = options
-        const increment = rentType === 'ppw' ? 10 : 50
-        let currentRent = lowRent
-        let rentTable = []
+      function generateRentTable(options) {
+        const { lowRent, highRent, rentType } = options;
+        const increment = rentType === "ppw" ? 10 : 50;
+        let currentRent = lowRent;
+        let rentTable = [];
         while (currentRent < highRent) {
-          rentTable.push(currentRent)
-          currentRent += increment
+          rentTable.push(currentRent);
+          currentRent += increment;
         }
-        const mappedTable = rentTable.map(price => {
-          return rentType === 'ppw'
+        const mappedTable = rentTable.map((price) => {
+          return rentType === "ppw"
             ? {
-              ppw: price,
-              ppm: (price * 52) / 12
-            }
+                ppw: price,
+                ppm: (price * 52) / 12,
+              }
             : {
-              ppw: (price * 12) / 52,
-              ppm: price
-            }
-        })
+                ppw: (price * 12) / 52,
+                ppm: price,
+              };
+        });
         mappedTable.forEach((pair, index) => {
-          const rentTable = document.getElementById('rentTable')
-          const tableRow = rentTable.insertRow(index)
-          const ppwCell = tableRow.insertCell(0)
-          const ppmCell = tableRow.insertCell(1)
-          ppwCell.appendChild(document.createTextNode('£' + Math.floor(pair.ppw)))
-          ppmCell.appendChild(document.createTextNode('£' + Math.floor(pair.ppm)))
-        })
+          const rentTable = document.getElementById("rentTable");
+          const tableRow = rentTable.insertRow(index);
+          const ppwCell = tableRow.insertCell(0);
+          const ppmCell = tableRow.insertCell(1);
+          ppwCell.appendChild(
+            document.createTextNode("£" + Math.floor(pair.ppw))
+          );
+          ppmCell.appendChild(
+            document.createTextNode("£" + Math.floor(pair.ppm))
+          );
+        });
       }
-      generateRentTable({ lowRent: 340, highRent: 480, rentType: 'ppw' })
+      generateRentTable({ lowRent: 340, highRent: 480, rentType: "ppw" });
     </script>
-  </body>  
+  </body>
 </html>

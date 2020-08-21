@@ -21,11 +21,12 @@ td {
 }
 /* common elements */
 .header {
+  z-index: 10;
   text-align: center;
   top: 0px;
   border-bottom: 2px solid #c928fb;
   width: 100%;
-  position: fixed;
+  position: absolute;
   font-size: 16px;
   background: white;
   height: 20px;
@@ -209,7 +210,10 @@ a:hover {
 /* media queries */
 @media screen and (max-width: 767px) {
   .header {
+    z-index: 10;
     height: 50px;
+    display: flex;
+    flex-wrap: wrap;
   }
   .sealOverlay {
     display: none !important;
@@ -257,5 +261,8 @@ a:hover {
   }
   a {
     color: #3f51b5;
+  }
+  .content {
+    margin-top: 60px;
   }
 }
